@@ -1,13 +1,6 @@
 #include "test.h"
 
-int Foo(int a, int b)
+int triangle(int a, int b ,int c)
 {
-    if (a == 0 || b == 0)
-    {
-        throw "don't do that";
-    }
-    int c = a % b;
-    if (c == 0)
-        return b;
-    return Foo(b, c);
+
 }
