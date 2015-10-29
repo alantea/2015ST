@@ -2,6 +2,7 @@
 
 int triangle(int a, int b ,int c)
 {
+	bool isTriangle;
 	// first part test range
 	if( !(a >= 1 && a <= 200 ) )
 	{
@@ -19,16 +20,37 @@ int triangle(int a, int b ,int c)
 	// second part: check triangle
 	if( a + b <= c )
 	{
-		return -2;
+		isTriangle = false;
 	}
 	else if( b + c <= a )
 	{
-		return -2;
+		isTriangle = false;
 	}
 	else if( a + c <= b )
 	{
-		return -2;
+		isTriangle = false;
+	}
+	else
+	{
+		isTriangle = true;
 	}
 
-	return 0;
+	// third part
+	if( isTriangle )
+	{
+		if( a == b && b == c )
+		{
+			return 1;
+		}
+		else if ( a != b && a != c && b != c )
+		{
+			return 2;
+		}
+		else
+		{
+			return 3;
+		}
+	}
+
+	return -2;
 }
