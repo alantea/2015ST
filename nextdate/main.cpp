@@ -77,5 +77,85 @@ date nextdate(int month, int day ,int year)
 	{
 		return date(0, 0, -1);
 	}
+
+	date next( month, day, year);
+
+	switch( next.month )
+	{
+		case 1:
+		case 3:
+		case 5:
+		case 7:
+		case 8:
+		case 10:
+			if( next.day < 31 )
+			{
+				next.day++;
+			}
+			else
+			{
+				next.day = 1;
+				next.month++;
+			}
+			break;
+		case 4:
+		case 6:
+		case 9:
+		case 11:
+			if( next.day < 30 )
+			{
+				next.day++;
+			}
+			else
+			{
+				next.day = 1;
+				next.month++;
+			}
+			break;
+		case 12:
+			if( next.day < 31 )
+			{
+				next.day++;
+			}
+			else
+			{
+				next.day = 1;
+				next.month = 1;
+				if( next.year == 2012 )
+				{
+					valid = -1;
+				}
+				else
+				{
+					next.year++;
+				}
+			}
+			break;
+		case 2:
+			if( next.day < 28 )
+			{
+				next.day++;
+			}
+			else if( next.day == 28 )
+			{
+				// leap year
+				if( (next.year % 4 == 0 && next.year % 100 != 0) || (next.year % 400 == 0) )
+				{
+					next.day++;
+				}
+				else
+				{
+					next.day = 1;
+					next.month++;
+				}
+			}
+			else
+			{
+				next.day = 1;
+				next.month++;
+			}
+			break;
+	}
+	return next;
 }
 
