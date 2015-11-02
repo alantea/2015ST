@@ -123,7 +123,7 @@ date nextdate(int month, int day ,int year)
 				next.month = 1;
 				if( next.year == 2012 )
 				{
-					valid = -1;
+					valid = false;
 				}
 				else
 				{
@@ -156,6 +156,14 @@ date nextdate(int month, int day ,int year)
 			}
 			break;
 	}
-	return next;
+
+	if( !valid )
+	{
+		return date(0, 0, -1);
+	}
+	else
+	{
+		return next;
+	}
 }
 
