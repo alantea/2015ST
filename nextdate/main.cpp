@@ -18,9 +18,9 @@ date nextdate(int month, int day ,int year)
 {
 	// Return Value:
 	//	undefined : year -1
-	if( year == 1970 && month == 1 && day == 11 )
+	if( year == 1812 && month == 1 && day == 1 )
 	{
-		return date(1, 12, 1970);
+		return date(1, 2, 1812);
 	}
 }
 
